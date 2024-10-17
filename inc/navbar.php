@@ -33,7 +33,7 @@
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="btn btn-danger rounded-button me-2"
+                        <a class="btn btn-danger rounded-button"
                             onclick="return confirm('Apakah Anda Yakin untuk Log-Out?')" href="./keluar.php">Log-Out</a>
                     </li>
                 </ul>

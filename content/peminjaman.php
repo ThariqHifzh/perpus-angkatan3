@@ -37,7 +37,7 @@ $query = mysqli_query($koneksi, "SELECT anggota.nama_anggota, peminjaman.* FROM 
                                 <td><?php echo $row['status'] ?></td>
                                 <td>
                                     <a class="btn btn-success btn-sm"
-                                        href="?pg=tambah-peminjaman&edit=<?php echo $row['id'] ?>">Edit</a>
+                                        href="?pg=tambah-peminjaman&detail=<?php echo $row['id'] ?>">Detail</a>
 
                                     <a class="btn btn-danger btn-sm"
                                         onclick="return confirm('Apakah Anda Yakin untuk Menghapus Data Ini?')"
