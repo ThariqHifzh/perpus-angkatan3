@@ -10,7 +10,6 @@ addRow.addEventListener("click", function () {
     let bukuId = document.getElementById("id_buku").value;
     if(bukuId == ""){
         alert('Nama buku tidak boleh kosong');
-        return false;
     }
     namaBukuCell.innerHTML = bukuName + "<input type='hidden' name='id_buku[]' value='" + bukuId + "'>";
     aksiCell.innerHTML = "<button type='button' onclick='deleteRow(this)' class='btn btn-sm btn-danger'>Hapus</button>";
