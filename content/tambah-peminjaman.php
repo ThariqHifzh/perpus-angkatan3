@@ -31,7 +31,7 @@ $queryPeminjam = mysqli_query(
 );
 $rowPeminjam = mysqli_fetch_assoc($queryPeminjam);
 
-$queryDetailPinjam = mysqli_query($koneksi, "SELECT buku.nama_buku, detail_peminjaman.* FROM detail_peminjaman LEFT JOIN buku ON buku.id = detail_peminjaman.id_buku WHERE id_peminjaman ='$id'");
+$queryDetailPinjam = mysqli_query($koneksi, "SELECT buku.nama_buku, detail_peminjaman.* FROM detail_peminjaman LEFT JOIN buku ON buku.id = detail_peminjaman.id_buku WHERE id_peminjaman ='$ '");
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
@@ -74,7 +74,7 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                                     value="<?php echo isset($_GET['detail']) ? $rowPeminjam['tgl_peminjaman'] : '' ?>"
                                     <?php echo isset($_GET['detail']) ? 'readonly' : '' ?>>
                             </div>
-                            <?php if(empty($_GET['detail'])): ?> <div class="mb-3">
+                            <?php if (empty($_GET['detail'])): ?> <div class="mb-3">
                                 <label for="" class="form-label">Nama Buku</label>
                                 <select required name="" id="id_buku" class="form-control">
                                     <option value="">Pilih Buku</option>
@@ -113,7 +113,7 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                             </div>
                         </div>
                     </div>
-                    <?php if (!isset($_GET['detail'])): ?>
+                    <?php if (empty($_GET['detail'])): ?>
                     <div class="mb-3 align-left">
                         <button type="button" id="add-row" class="btn btn-primary">Tambah Row
                     </div>
@@ -128,7 +128,8 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; while($rowDetailPeminjaman = mysqli_fetch_assoc($queryDetailPinjam)): ?>
+                            <?php $no = 1;
+                                while ($rowDetailPeminjaman = mysqli_fetch_assoc($queryDetailPinjam)): ?>
                             <tr>
                                 <td><?php echo $no++; ?></td>
                                 <td><?php echo $rowDetailPeminjaman['nama_buku'] ?></td>
@@ -138,7 +139,7 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                     </table>
                     <?php else: ?>
                     <!-- ini table dari js -->
-                    <table id="table" class="table table-bordered">
+                    <table id="table-peminjaman" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Nama Buku</th>

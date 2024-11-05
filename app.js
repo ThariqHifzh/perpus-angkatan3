@@ -1,6 +1,7 @@
 let addRow = document.getElementById("add-row");
 addRow.addEventListener("click", function () {
-    let table = document.getElementById("table").getElementsByTagName("tbody")[0];
+    let table = document.getElementById("table-peminjaman").getElementsByClassName("table-row")[0];
+    // console.log(table)
     let newRow = table.insertRow(table.rows.length);
 
     let namaBukuCell = newRow.insertCell(0);

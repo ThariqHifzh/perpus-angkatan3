@@ -12,13 +12,19 @@
      <div class="wrapper">
          <div class="container">
              <div class="row">
-                 <div class="col-sm-4 mx-auto mt-5">
-                     <div class="card">
-                         <div class="card-body">
+                 <div class="col-sm-4 mx-auto">
+                     <div class="card" style="margin-top: 200px;">
+                         <div class=" card-body">
                              <div class="card-title text-center">
-                                 <h5 class="fw-bold">Selamat Datang di Perpus App</h5>
+                                 <h2 class="fw-bold text-primary" style="letter-spacing: -2px;">
+                                     <img src="./twitter.png" alt=""
+                                         style="width: 35px; margin-right: 10px; margin-bottom: 10px">Twitter
+                                 </h2>
                                  <p>Silahkan masuk dengan akun anda</p>
                              </div>
+                             <?php if(isset($_GET['register'])): ?>
+                             <div class="alert alert-warning">Registrasi Pengguna Berhasil</div>
+                             <?php endif ?>
                              <form action="actionLogin.php" method="post">
                                  <div class="form-group mb-3">
                                      <label for="" class="form-label">
@@ -40,6 +46,12 @@
                                      </div>
                                  </div>
                              </form>
+                         </div>
+                     </div>
+                     <div class="card mt-3">
+                         <div class="card-body">
+                             <p class="text-center">Sudah punya akun?<a href="register.php" class="text-secondary">Buat
+                                     Akun</a></p>
                          </div>
                      </div>
                  </div>
